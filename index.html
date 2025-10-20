@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="ru" data-lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Гаврилин Егор Юрьевич — Программист/Разработчик</title>
+  <meta name="description" content="Гаврилин Егор Юрьевич — .NET/C# разработчик, Python, Docker, CI/CD. Рязань." />
+  <meta property="og:title" content="Егор Гаврилин — Резюме" />
+  <meta property="og:description" content=".NET/C# разработчик (Python, Docker, CI/CD). Рязань. Проекты и опыт." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sothug.github.io/" />
+  <meta name="theme-color" content="#335CFF" />
+
+  <style>
+    :root{
+      --accent:#335CFF; /* синий акцент */
+      --text:#0f172a;   /* slate-900 */
+      --muted:#475569;  /* slate-600 */
+      --bg:#f8fafc;     /* slate-50 */
+      --card:#ffffff;
+      --ring:rgba(51,92,255,.2);
+      --shadow: 0 8px 30px rgba(2,6,23,.08);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,"Noto Sans",sans-serif;
+      color:var(--text);
+      background: radial-gradient(1200px 600px at 80% -100px, rgba(51,92,255,.07), transparent),
+                  linear-gradient(180deg, #fff, #f9fbff);
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{
+      max-width: 980px;
+      margin: 32px auto 64px;
+      padding: 0 20px;
+    }
+
+    /* Шапка */
+    .header{
+      display:grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+    .title h1{
+      font-size: clamp(26px, 4vw, 34px);
+      line-height:1.15;
+      margin: 0 0 6px 0;
+      letter-spacing: .2px;
+    }
+    .title .role{
+      font-size: 16px;
+      color: var(--muted);
+      margin:0;
+    }
+    .controls{
+      display:flex; gap:8px; align-items:center;
+    }
+    .btn{
+      appearance:none; border:1px solid rgba(15,23,42,.1);
+      background:#fff; color:var(--text);
+      padding:10px 14px; border-radius:12px; cursor:pointer;
+      box-shadow: var(--shadow);
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    .btn:hover{ transform: translateY(-2px); box-shadow:0 12px 40px rgba(2,6,23,.12) }
+    .btn:active{ transform: translateY(0); box-shadow: var(--shadow) }
+    .btn.primary{ border-color: transparent; background: var(--accent); color:#fff }
+    .segmented{
+      display:flex; border:1px solid rgba(15,23,42,.1); border-radius:12px; overflow:hidden; background:#fff; box-shadow: var(--shadow);
+    }
+    .segmented button{
+      border:0; background:transparent; padding:10px 12px; cursor:pointer; font-weight:600; color:var(--muted);
+    }
+    .segmented button.active{ background:var(--accent); color:#fff }
+
+    /* Карточка резюме */
+    .resume{
+      background: var(--card);
+      border:1px solid rgba(15,23,42,.08);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+    .resume::before{
+      content:""; position:absolute; inset:0;
+      background: radial-gradient(500px 120px at 20% -40px, rgba(51,92,255,.10), transparent);
+      pointer-events:none;
+    }
+    .resume-inner{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:24px;
+      padding: 22px;
+    }
+    .section{
+      margin-bottom: 14px;
+      animation: fadeInUp .6s both;
+      will-change: transform, opacity;
+    }
+    .section h2{
+      font-size: 14.5px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color:#0b1a51;
+      margin:0 0 10px 0;
+      position:relative;
+    }
+    .section h2::after{
+      content:"";
+      display:block;
+      height:2px; width: 48px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      margin-top:6px;
+      border-radius:2px;
+    }
+    .summary{
+      font-size:15px; line-height:1.5; color:#1f2937;
+      background: linear-gradient(180deg, #fff, #f7f9ff);
+      border:1px solid rgba(51,92,255,.15);
+      padding:12px 14px; border-radius:12px;
+    }
+    .list{
+      display:grid; gap:10px;
+    }
+    .item{
+      border:1px solid rgba(15,23,42,.08);
+      border-radius:12px; padding:10px 12px;
+      background:#fff;
+    }
+    .item h3{
+      font-size:16px; margin:0 0 4px 0;
+    }
+    .meta{
+      font-size:13px; color:var(--muted); margin-bottom:6px;
+    }
+    .bullets{ margin:0; padding-left:18px }
+    .bullets li{ margin:2px 0; }
+
+    /* Контакты/навыки */
+    .pill{
+      display:inline-block; padding:6px 10px; border-radius:999px;
+      border:1px solid rgba(15,23,42,.1); margin:4px 6px 0 0; font-size:13px; background:#fff
+    }
+    .contact a{ word-break: break-all }
+
+    /* Анимации экрана */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(12px) }
+      to   { opacity: 1; transform: translateY(0) }
+    }
+    .will-animate{ opacity:0; transform: translateY(12px) }
+    .will-animate.visible{ opacity:1; transform: translateY(0); transition: opacity .6s ease, transform .6s ease }
+
+    /* Двуязычие: показываем выбранный data-lang */
+    [data-i18n]{ display:none }
+    html[data-lang="ru"] [data-i18n="ru"]{ display:initial }
+    html[data-lang="en"] [data-i18n="en"]{ display:initial }
+
+    /* Печать — ровно 1 страница A4 */
+    @page{ size: A4; margin:10mm }
+    @media print {
+      :root{
+        --bg:#fff; --card:#fff;
+      }
+      body{ background:#fff }
+      .controls, .print-hide{ display:none !important }
+      .resume{ box-shadow:none; border:0 }
+      .resume::before{ display:none }
+      .resume-inner{
+        grid-template-columns: 1fr 1fr; gap:10px; padding:0;
+      }
+      .section{ break-inside: avoid; page-break-inside: avoid; margin-bottom: 8px }
+      .item{ break-inside: avoid; page-break-inside: avoid; padding:8px }
+      .summary{ padding:8px }
+      .section h2{ font-size:12px }
+      .item h3{ font-size:14px }
+      .meta{ font-size:11px }
+      .bullets{ padding-left:16px }
+      .pill{ padding:3px 8px; font-size:11px }
+      body{ font-size:12px; }
+    }
+  </style>
+
+  <!-- JSON-LD микроразметка Person -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Гаврилин Егор Юрьевич",
+    "jobTitle": "Программист / Разработчик",
+    "address": { "@type":"PostalAddress", "addressLocality": "Рязань, Россия" },
+    "email": "mailto:egorgavrilin2014@yandex.ru",
+    "telephone": "+7-910-503-18-32",
+    "url": "https://github.com/sothug",
+    "sameAs": [
+      "https://t.me/sothug",
+      "https://github.com/sothug",
+      "https://vdokhnovenierzn.ru/"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="title">
+        <h1>Гаврилин Егор Юрьевич</h1>
+        <p class="role" data-i18n="ru">Программист / Разработчик (.NET/C#, Python, Docker, CI/CD)</p>
+        <p class="role" data-i18n="en">Software Engineer (.NET/C#, Python, Docker, CI/CD)</p>
+      </div>
+      <div class="controls print-hide">
+        <div class="segmented" role="tablist" aria-label="Выбор языка">
+          <button id="btn-ru" class="active" aria-selected="true">RU</button>
+          <button id="btn-en" aria-selected="false">EN</button>
+        </div>
+        <button class="btn" onclick="window.print()">Печать / PDF</button>
+        <a class="btn primary" href="https://github.com/sothug" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </header>
+
+    <!-- Подсказка по фото:
+         Чтобы добавить аватар, вставьте <img src="avatar.jpg" alt="Егор Гаврилин" style="width:84px;height:84px;border-radius:16px;border:1px solid rgba(15,23,42,.12);object-fit:cover;box-shadow:0 4px 16px rgba(2,6,23,.08)"> 
+         внутрь .title выше, после <h1>. Фото автоматически участвует в печати. -->
+
+    <main class="resume" id="resume">
+      <div class="resume-inner">
+        <!-- Левая колонка -->
+        <section class="left">
+          <div class="section will-animate">
+            <h2 data-i18n="ru">Кратко</h2>
+            <h2 data-i18n="en">Summary</h2>
+            <div class="summary">
+              <p data-i18n="ru">
+                .NET/C# разработчик из Рязани с коммерческим опытом с 2022 года. Укрепляю бэкенд-сервисы, пишу интеграции и автоматизацию, упаковываю решения в Docker и настраиваю базовый CI/CD (GitHub/GitLab). 
+                Практикую здравый минимализм в архитектуре и приоритизацию эффект-задач: «сначала то, что приносит ценность пользователю».
+              </p>
+              <p data-i18n="en">
+                .NET/C# developer from Ryazan, Russia (since 2022). I build reliable backend services, integrations and automation; package workloads with Docker and set up lean CI/CD (GitHub/GitLab). 
+                Pragmatic, value-driven, and focused on shipping measurable improvements first.
+              </p>
+            </div>
+          </div>
+
+          <div class="section will-animate">
+            <h2 data-i18n="ru">Опыт</h2>
+            <h2 data-i18n="en">Experience</h2>
+
+            <article class="item">
+              <h3 data-i18n="ru">Абонент+ — Программист/Разработчик</h3>
+              <h3 data-i18n="en">Abonent+ — Software Engineer</h3>
+              <div class="meta">
+                <span data-i18n="ru">сентябрь 2022 — октябрь 2025, Рязань (B2B, ЖКХ)</span>
+                <span data-i18n="en">Sep 2022 — Oct 2025, Ryazan (B2B, Utilities)</span>
+              </div>
+              <ul class="bullets">
+                <li data-i18n="ru">Сопровождение ПИР «Претензия» (судебно-исковая работа, .NET Framework): выполнено 200+ задач, стабилизирована поставка обновлений.</li>
+                <li data-i18n="en">Maintained “Pretenziya” litigation workflow (.NET Framework): delivered 200+ tasks; improved release stability.</li>
+
+                <li data-i18n="ru">Разработал 2 интеграционных сервиса (ФССП и ГАС «Правосудие», Python), сократив ручные операции и время получения статусов дел.</li>
+                <li data-i18n="en">Built two integration services (FSSP and GAS “Pravosudie”, Python) reducing manual work and speeding up case status retrieval.</li>
+
+                <li data-i18n="ru">Помог в миграции «Претензии» на .NET Core: удалил/заменил ~80% несовместимых зависимостей, подготовил почву к переносу модулей.</li>
+                <li data-i18n="en">Assisted migration of “Pretenziya” to .NET Core: removed/replaced ~80% incompatible deps, enabling further module porting.</li>
+
+                <li data-i18n="ru">Разработал несколько внутренних сервисов и утилит для автоматизации рабочих процессов.</li>
+                <li data-i18n="en">Built several internal services and utilities to automate daily workflows.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="section will-animate">
+            <h2 data-i18n="ru">Проекты</h2>
+            <h2 data-i18n="en">Projects</h2>
+
+            <article class="item">
+              <h3 data-i18n="ru">Сайт «Школа вдохновения» — фуллстек</h3>
+              <h3 data-i18n="en">“School of Inspiration” website — full-stack</h3>
+              <div class="meta">
+                <span>.NET 8, EF Core, ReactJS, PostgreSQL</span>
+                ·
+                <a href="https://vdokhnovenierzn.ru/" target="_blank" rel="noopener">vdokhnovenierzn.ru</a>
+              </div>
+              <ul class="bullets">
+                <li data-i18n="ru">100% реализации: фронт+бэк, деплой, база; админ-функции и публичные страницы.</li>
+                <li data-i18n="en">End-to-end ownership: front+back, deploy, DB; admin functions and public pages.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <!-- Правая колонка -->
+        <section class="right">
+          <div class="section will-animate">
+            <h2 data-i18n="ru">Контакты</h2>
+            <h2 data-i18n="en">Contacts</h2>
+            <div class="list contact">
+              <div class="item">
+                <div><strong data-i18n="ru">Город:</strong> <span data-i18n="ru">Рязань</span><span data-i18n="en">Ryazan, Russia</span></div>
+                <div><strong>Тел.:</strong> <a href="tel:+79105031832">+7 (910) 503-18-32</a></div>
+                <div><strong>Email:</strong> <a href="mailto:egorgavrilin2014@yandex.ru">egorgavrilin2014@yandex.ru</a></div>
+                <div><strong>Telegram:</strong> <a href="https://t.me/sothug" target="_blank" rel="noopener">@sothug</a></div>
+                <div><strong>GitHub:</strong> <a href="https://github.com/sothug" target="_blank" rel="noopener">github.com/sothug</a></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section will-animate">
+            <h2 data-i18n="ru">Навыки</h2>
+            <h2 data-i18n="en">Skills</h2>
+            <div class="item">
+              <!-- Список составлен из вашего текста, приоритизировал под .NET-бэкенд -->
+              <div class="pill">.NET / C#</div>
+              <div class="pill">ASP.NET Core</div>
+              <div class="pill">Entity Framework Core</div>
+              <div class="pill">Python (интеграции, утилиты)</div>
+              <div class="pill">Docker</div>
+              <div class="pill">GitHub / GitLab CI/CD (базовый)</div>
+              <div class="pill">REST API</div>
+              <div class="pill">PostgreSQL / SQL</div>
+              <div class="pill">React (базово, при необходимости)</div>
+              <div class="pill">Командная работа</div>
+              <div class="pill">Целеустремлённость</div>
+              <div class="pill">Поиск решений / самостоятельность</div>
+            </div>
+          </div>
+
+          <div class="section will-animate">
+            <h2 data-i18n="ru">Образование</h2>
+            <h2 data-i18n="en">Education</h2>
+            <div class="item">
+              <h3 data-i18n="ru">РГРТУ, 09.03.02 Информационные системы и технологии</h3>
+              <h3 data-i18n="en">RSREU, B.Sc. in Information Systems and Technologies</h3>
+              <div class="meta" data-i18n="ru">2020–2024</div>
+              <div class="meta" data-i18n="en">2020–2024</div>
+            </div>
+          </div>
+
+          <div class="section will-animate">
+            <h2 data-i18n="ru">О себе</h2>
+            <h2 data-i18n="en">About</h2>
+            <div class="item">
+              <p data-i18n="ru">Предпочитаю бэкенд и системную интеграцию. К фронтенду отношусь утилитарно: могу сделать, когда это ускоряет дело, но не планирую уходить целиком во фронт.</p>
+              <p data-i18n="en">I prefer backend and systems integration. Frontend is fine pragmatically if it unblocks delivery, but my focus is not pure frontend.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="print-hide" style="margin-top:14px; color:var(--muted); font-size:13px;">
+      <span data-i18n="ru">Нажмите «Печать / PDF», чтобы сохранить текущую языковую версию в один лист A4.</span>
+      <span data-i18n="en">Use “Print / PDF” to export the currently selected language to a single A4 page.</span>
+    </footer>
+  </div>
+
+  <script>
+    // Язык RU/EN с сохранением выбора в localStorage; печатается активный язык.
+    const DOC = document.documentElement;
+    const btnRu = document.getElementById('btn-ru');
+    const btnEn = document.getElementById('btn-en');
+    function setLang(lang){
+      DOC.setAttribute('lang', lang === 'ru' ? 'ru' : 'en');
+      DOC.setAttribute('data-lang', lang);
+      localStorage.setItem('cv_lang', lang);
+      btnRu.classList.toggle('active', lang==='ru');
+      btnEn.classList.toggle('active', lang==='en');
+      btnRu.setAttribute('aria-selected', lang==='ru');
+      btnEn.setAttribute('aria-selected', lang==='en');
+    }
+    btnRu.addEventListener('click', ()=>setLang('ru'));
+    btnEn.addEventListener('click', ()=>setLang('en'));
+    setLang(localStorage.getItem('cv_lang') || 'ru');
+
+    // Мягкие анимации появления на экране (отключены в печати через @media print)
+    const io = new IntersectionObserver(entries=>{
+      for(const e of entries){
+        if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
+      }
+    }, {threshold:.12});
+    document.querySelectorAll('.will-animate').forEach(el=>io.observe(el));
+  </script>
+</body>
+</html>
