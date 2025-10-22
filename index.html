@@ -1,390 +1,403 @@
 <!doctype html>
 <html lang="ru" data-lang="ru">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Гаврилин Егор Юрьевич — Программист/Разработчик</title>
-  <meta name="description" content="Гаврилин Егор Юрьевич — .NET/C# разработчик, Python, Docker, CI/CD. Рязань." />
-  <meta property="og:title" content="Егор Гаврилин — Резюме" />
-  <meta property="og:description" content=".NET/C# разработчик (Python, Docker, CI/CD). Рязань. Проекты и опыт." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://sothug.github.io/" />
-  <meta name="theme-color" content="#335CFF" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Егор Гаврилин — Middle .NET Developer</title>
+  <meta name="description" content="Егор Гаврилин — Middle .NET разработчик (.NET/C#, ASP.NET Core, EF Core, Python, Docker, CI/CD). Рязань."/>
+  <meta property="og:title" content="Егор Гаврилин — Резюме"/>
+  <meta property="og:description" content="Middle .NET Developer (.NET/C#, ASP.NET Core, EF Core, Python, Docker, CI/CD). Проекты и опыт."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://sothug.github.io/"/>
+  <meta name="theme-color" content="#335CFF"/>
 
   <style>
     :root{
-      --accent:#335CFF; /* синий акцент */
-      --text:#0f172a;   /* slate-900 */
-      --muted:#475569;  /* slate-600 */
-      --bg:#f8fafc;     /* slate-50 */
+      --accent:#335CFF;
+      --accent-2:#6aa0ff;
+      --text:#0f172a;
+      --muted:#475569;
+      --bg:#f4f7ff;
       --card:#ffffff;
-      --ring:rgba(51,92,255,.2);
-      --shadow: 0 8px 30px rgba(2,6,23,.08);
+      --shadow:0 18px 60px rgba(2,6,23,.14);
+      --radius:20px;
     }
-
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
       margin:0;
-      font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,"Noto Sans",sans-serif;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial,"Noto Sans",sans-serif;
       color:var(--text);
-      background: radial-gradient(1200px 600px at 80% -100px, rgba(51,92,255,.07), transparent),
-                  linear-gradient(180deg, #fff, #f9fbff);
+      background:
+        radial-gradient(1200px 600px at 90% -140px, rgba(51,92,255,.12), transparent),
+        radial-gradient(900px 420px at -10% -100px, rgba(106,160,255,.12), transparent),
+        linear-gradient(180deg,#fff,#f4f8ff 45%,#f7faff 100%);
     }
     a{color:var(--accent); text-decoration:none}
     a:hover{text-decoration:underline}
-    .container{
-      max-width: 980px;
-      margin: 32px auto 64px;
-      padding: 0 20px;
-    }
+    .container{max-width:1100px;margin:26px auto 40px;padding:0 20px}
 
-    /* Шапка */
-    .header{
-      display:grid;
-      grid-template-columns: 1fr auto;
-      gap: 16px;
-      align-items: center;
-      margin-bottom: 18px;
-    }
-    .title h1{
-      font-size: clamp(26px, 4vw, 34px);
-      line-height:1.15;
-      margin: 0 0 6px 0;
-      letter-spacing: .2px;
-    }
-    .title .role{
-      font-size: 16px;
-      color: var(--muted);
-      margin:0;
-    }
-    .controls{
-      display:flex; gap:8px; align-items:center;
-    }
-    .btn{
-      appearance:none; border:1px solid rgba(15,23,42,.1);
-      background:#fff; color:var(--text);
-      padding:10px 14px; border-radius:12px; cursor:pointer;
-      box-shadow: var(--shadow);
-      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
-    }
-    .btn:hover{ transform: translateY(-2px); box-shadow:0 12px 40px rgba(2,6,23,.12) }
-    .btn:active{ transform: translateY(0); box-shadow: var(--shadow) }
-    .btn.primary{ border-color: transparent; background: var(--accent); color:#fff }
-    .segmented{
-      display:flex; border:1px solid rgba(15,23,42,.1); border-radius:12px; overflow:hidden; background:#fff; box-shadow: var(--shadow);
-    }
-    .segmented button{
-      border:0; background:transparent; padding:10px 12px; cursor:pointer; font-weight:600; color:var(--muted);
-    }
-    .segmented button.active{ background:var(--accent); color:#fff }
-
-    /* Карточка резюме */
-    .resume{
-      background: var(--card);
-      border:1px solid rgba(15,23,42,.08);
-      border-radius: 18px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      position: relative;
-    }
-    .resume::before{
-      content:""; position:absolute; inset:0;
-      background: radial-gradient(500px 120px at 20% -40px, rgba(51,92,255,.10), transparent);
-      pointer-events:none;
-    }
-    .resume-inner{
-      display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap:24px;
-      padding: 22px;
-    }
-    .section{
-      margin-bottom: 14px;
-      animation: fadeInUp .6s both;
-      will-change: transform, opacity;
-    }
-    .section h2{
-      font-size: 14.5px;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color:#0b1a51;
-      margin:0 0 10px 0;
+    .hero{
       position:relative;
-    }
-    .section h2::after{
-      content:"";
-      display:block;
-      height:2px; width: 48px;
-      background: linear-gradient(90deg, var(--accent), transparent);
-      margin-top:6px;
-      border-radius:2px;
-    }
-    .summary{
-      font-size:15px; line-height:1.5; color:#1f2937;
-      background: linear-gradient(180deg, #fff, #f7f9ff);
-      border:1px solid rgba(51,92,255,.15);
-      padding:12px 14px; border-radius:12px;
-    }
-    .list{
-      display:grid; gap:10px;
-    }
-    .item{
+      background:linear-gradient(135deg, rgba(51,92,255,.10), rgba(106,160,255,.10));
       border:1px solid rgba(15,23,42,.08);
-      border-radius:12px; padding:10px 12px;
-      background:#fff;
+      border-radius:28px;
+      padding:18px 18px 18px 18px;
+      overflow:hidden;
+      box-shadow:0 10px 44px rgba(2,6,23,.10);
+      margin-bottom:14px;
     }
-    .item h3{
-      font-size:16px; margin:0 0 4px 0;
+    .hero::before{
+      content:"";position:absolute;inset:-1px;
+      background:
+        radial-gradient(260px 120px at 10% 0%, rgba(51,92,255,.25), transparent),
+        radial-gradient(240px 100px at 85% 120%, rgba(106,160,255,.22), transparent);
+      filter:blur(12px);
+      z-index:0;
     }
-    .meta{
-      font-size:13px; color:var(--muted); margin-bottom:6px;
+    .hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center}
+    .hero-title h1{margin:0;font-size:clamp(26px,4.4vw,38px);line-height:1.1;letter-spacing:.2px}
+    .hero-sub{margin:6px 0 0 0;color:var(--muted);font-size:15px}
+    .badge{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 12px;border-radius:999px;color:#fff;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+      background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      box-shadow:0 10px 30px rgba(51,92,255,.35);
+      white-space:nowrap
     }
-    .bullets{ margin:0; padding-left:18px }
-    .bullets li{ margin:2px 0; }
+    .controls{display:flex;gap:8px;align-items:center}
+    .segmented{display:flex;border:1px solid rgba(15,23,42,.12);border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 8px 30px rgba(2,6,23,.10)}
+    .segmented button{border:0;background:transparent;padding:10px 12px;cursor:pointer;font-weight:700;color:var(--muted)}
+    .segmented button.active{background:var(--accent);color:#fff}
+    .btn{appearance:none;border:1px solid rgba(15,23,42,.12);background:#fff;color:var(--text);padding:10px 14px;border-radius:12px;cursor:pointer;box-shadow:0 8px 30px rgba(2,6,23,.10);transition:transform .2s ease, box-shadow .2s ease}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 16px 44px rgba(2,6,23,.14)}
+    .btn.primary{border-color:transparent;background:var(--accent);color:#fff}
 
-    /* Контакты/навыки */
-    .pill{
-      display:inline-block; padding:6px 10px; border-radius:999px;
-      border:1px solid rgba(15,23,42,.1); margin:4px 6px 0 0; font-size:13px; background:#fff
+    .resume{
+      background:var(--card);
+      border:1px solid rgba(15,23,42,.08);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
     }
-    .contact a{ word-break: break-all }
-
-    /* Анимации экрана */
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(12px) }
-      to   { opacity: 1; transform: translateY(0) }
+    .resume::after{
+      content:"";position:absolute;inset:0;pointer-events:none;
+      background:
+        radial-gradient(560px 140px at 22% -48px, rgba(51,92,255,.12), transparent),
+        radial-gradient(420px 120px at 96% -28px, rgba(106,160,255,.10), transparent);
     }
-    .will-animate{ opacity:0; transform: translateY(12px) }
-    .will-animate.visible{ opacity:1; transform: translateY(0); transition: opacity .6s ease, transform .6s ease }
+    .resume-inner{position:relative;z-index:1;display:grid;grid-template-columns:1.2fr .8fr;gap:22px;padding:20px}
 
-    /* Двуязычие: показываем выбранный data-lang */
-    [data-i18n]{ display:none }
-    html[data-lang="ru"] [data-i18n="ru"]{ display:initial }
-    html[data-lang="en"] [data-i18n="en"]{ display:initial }
+    .section{margin-bottom:14px;animation:fadeIn .5s both}
+    .section h2{font-size:14.5px;letter-spacing:.12em;text-transform:uppercase;color:#0b1a51;margin:0 0 10px 0;position:relative}
+    .section h2::after{content:"";display:block;height:2px;width:64px;background:linear-gradient(90deg,var(--accent),transparent);margin-top:6px;border-radius:2px}
 
-    /* Печать — ровно 1 страница A4 */
-    @page{ size: A4; margin:10mm }
-    @media print {
-      :root{
-        --bg:#fff; --card:#fff;
-      }
-      body{ background:#fff }
-      .controls, .print-hide{ display:none !important }
-      .resume{ box-shadow:none; border:0 }
-      .resume::before{ display:none }
-      .resume-inner{
-        grid-template-columns: 1fr 1fr; gap:10px; padding:0;
-      }
-      .section{ break-inside: avoid; page-break-inside: avoid; margin-bottom: 8px }
-      .item{ break-inside: avoid; page-break-inside: avoid; padding:8px }
-      .summary{ padding:8px }
-      .section h2{ font-size:12px }
-      .item h3{ font-size:14px }
-      .meta{ font-size:11px }
-      .bullets{ padding-left:16px }
-      .pill{ padding:3px 8px; font-size:11px }
-      body{ font-size:12px; }
+    .summary{font-size:15px;line-height:1.5;color:#1f2937;background:linear-gradient(180deg,#fff,#f5f8ff);border:1px solid rgba(51,92,255,.18);padding:12px 14px;border-radius:14px}
+
+    .item{border:1px solid rgba(15,23,42,.08);border-radius:14px;padding:10px 12px;background:#fff}
+    .item h3{font-size:16px;margin:0 0 4px 0}
+    .meta{font-size:13px;color:var(--muted);margin-bottom:6px}
+    .bullets{margin:0;padding-left:18px}
+    .bullets li{margin:2px 0}
+
+    .contacts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+    .contact-card{
+      display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid rgba(15,23,42,.08);border-radius:14px;background:#fff;min-width:0
+    }
+    .contact-card svg{width:20px;height:20px;flex:0 0 20px}
+    .contact-card .label{font-weight:700}
+    .contact-card .value{color:var(--muted);font-size:14px;word-break:break-word;overflow-wrap:anywhere;min-width:0}
+    .print-contacts{display:none}
+
+    .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .metric{padding:12px;border:1px solid rgba(15,23,42,.08);border-radius:14px;background:#fff;text-align:center}
+    .metric .num{font-size:20px;font-weight:900}
+    .metric .cap{font-size:12px;color:var(--muted)}
+
+    .skill-graph{display:grid;gap:8px}
+    .skill{
+      display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:center
+    }
+    .skill .name{font-size:13px;font-weight:700;white-space:nowrap}
+    .bar{height:10px;border-radius:999px;overflow:hidden;background:rgba(15,23,42,.08);position:relative}
+    .bar span{
+      position:absolute;inset:0 0 0 auto;width:var(--w);
+      background:linear-gradient(90deg, rgba(51,92,255,.85), rgba(106,160,255,.85));
+      border-radius:999px;transform-origin:left center
+    }
+
+    .timeline{position:relative;padding-left:18px}
+    .timeline::before{content:"";position:absolute;left:8px;top:0;bottom:0;width:2px;background:linear-gradient(#c7d2fe,#93c5fd)}
+    .tl-item{position:relative;margin:10px 0;padding-left:10px}
+    .tl-item::before{content:"";position:absolute;left:-1px;top:6px;width:10px;height:10px;border-radius:50%;background:linear-gradient(180deg,#335CFF,#6aa0ff);box-shadow:0 0 0 2px #fff}
+    .tl-title{font-weight:800}
+    .tl-meta{color:var(--muted);font-size:12px}
+
+    [data-i18n]{display:none}
+    html[data-lang="ru"] [data-i18n="ru"]{display:initial}
+    html[data-lang="en"] [data-i18n="en"]{display:initial}
+
+    @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+    @page{size:A4;margin:10mm}
+    @media print{
+      html,body{height:auto}
+      body{background:#fff}
+      .container{margin:0 auto 0;padding:0 0}
+      .resume{box-shadow:none;border:0;border-radius:0;min-height:calc(297mm - 20mm);width:100%}
+      .resume::after{display:none}
+      .resume-inner{grid-template-columns:1fr 1fr;gap:8px;padding:0 0}
+      .section{break-inside:avoid;page-break-inside:avoid;margin-bottom:8px}
+      .item{break-inside:avoid;page-break-inside:avoid;padding:8px}
+      .summary{padding:8px;background:#fff;border-color:#ddd}
+      .section h2{font-size:12px}
+      .item h3{font-size:14px}
+      .meta{font-size:11px}
+      .bullets{padding-left:16px}
+      .metrics{gap:6px}
+      .metric{padding:8px}
+      .contacts{display:none!important}
+      .print-contacts{display:block!important;margin-top:4px}
+      .print-contacts a{color:#000;text-decoration:underline}
+      .btn,.segmented{display:none!important}
+      .badge{display:none!important}
+      body{font-size:12px}
     }
   </style>
 
-  <!-- JSON-LD микроразметка Person -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Гаврилин Егор Юрьевич",
-    "jobTitle": "Программист / Разработчик",
-    "address": { "@type":"PostalAddress", "addressLocality": "Рязань, Россия" },
-    "email": "mailto:egorgavrilin2014@yandex.ru",
-    "telephone": "+7-910-503-18-32",
-    "url": "https://github.com/sothug",
-    "sameAs": [
-      "https://t.me/sothug",
-      "https://github.com/sothug",
-      "https://vdokhnovenierzn.ru/"
-    ]
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Гаврилин Егор Юрьевич",
+    "jobTitle":"Middle .NET Developer",
+    "address":{"@type":"PostalAddress","addressLocality":"Рязань, Россия"},
+    "email":"mailto:egorgavrilin2014@yandex.ru",
+    "telephone":"+7-910-503-18-32",
+    "url":"https://github.com/sothug",
+    "sameAs":["https://t.me/sothug","https://github.com/sothug","https://vdokhnovenierzn.ru/"]
   }
   </script>
 </head>
 <body>
   <div class="container">
-    <header class="header">
-      <div class="title">
-        <h1>Гаврилин Егор Юрьевич</h1>
-        <p class="role" data-i18n="ru">Программист / Разработчик (.NET/C#, Python, Docker, CI/CD)</p>
-        <p class="role" data-i18n="en">Software Engineer (.NET/C#, Python, Docker, CI/CD)</p>
-      </div>
-      <div class="controls print-hide">
-        <div class="segmented" role="tablist" aria-label="Выбор языка">
-          <button id="btn-ru" class="active" aria-selected="true">RU</button>
-          <button id="btn-en" aria-selected="false">EN</button>
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-title">
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+            <h1>Гаврилин Егор Юрьевич</h1>
+            <img src="avatar.jpg" alt="Егор Гаврилин" style="width:84px;height:84px;border-radius:16px;border:1px solid rgba(15,23,42,.12);object-fit:cover;box-shadow:0 4px 16px rgba(2,6,23,.08);margin-top:8px">
+            <span class="badge">Middle .NET Developer</span>
+          </div>
+          <p class="hero-sub" data-i18n="ru">.NET/C#, ASP.NET Core, EF Core · Python · Docker · CI/CD</p>
+          <p class="hero-sub" data-i18n="en">.NET/C#, ASP.NET Core, EF Core · Python · Docker · CI/CD</p>
         </div>
-        <button class="btn" onclick="window.print()">Печать / PDF</button>
-        <a class="btn primary" href="https://github.com/sothug" target="_blank" rel="noopener">GitHub</a>
+        <div class="controls">
+          <div class="segmented" role="tablist" aria-label="Language">
+            <button id="btn-ru" class="active" aria-selected="true">RU</button>
+            <button id="btn-en" aria-selected="false">EN</button>
+          </div>
+          <a class="btn primary" href="https://github.com/sothug" target="_blank" rel="noopener">GitHub</a>
+        </div>
       </div>
-    </header>
+    </section>
 
-    <!-- Подсказка по фото:
-         Чтобы добавить аватар, вставьте <img src="avatar.jpg" alt="Егор Гаврилин" style="width:84px;height:84px;border-radius:16px;border:1px solid rgba(15,23,42,.12);object-fit:cover;box-shadow:0 4px 16px rgba(2,6,23,.08)"> 
-         внутрь .title выше, после <h1>. Фото автоматически участвует в печати. -->
-
-    <main class="resume" id="resume">
+    <main class="resume">
       <div class="resume-inner">
-        <!-- Левая колонка -->
         <section class="left">
-          <div class="section will-animate">
+          <div class="section">
             <h2 data-i18n="ru">Кратко</h2>
             <h2 data-i18n="en">Summary</h2>
             <div class="summary">
-              <p data-i18n="ru">
-                .NET/C# разработчик из Рязани с коммерческим опытом с 2022 года. Укрепляю бэкенд-сервисы, пишу интеграции и автоматизацию, упаковываю решения в Docker и настраиваю базовый CI/CD (GitHub/GitLab). 
-                Практикую здравый минимализм в архитектуре и приоритизацию эффект-задач: «сначала то, что приносит ценность пользователю».
-              </p>
-              <p data-i18n="en">
-                .NET/C# developer from Ryazan, Russia (since 2022). I build reliable backend services, integrations and automation; package workloads with Docker and set up lean CI/CD (GitHub/GitLab). 
-                Pragmatic, value-driven, and focused on shipping measurable improvements first.
-              </p>
+              <p data-i18n="ru">Middle .NET разработчик из Рязани, в продакшене с 2022 года. Делаю надёжные бэкенд-сервисы, интеграции и автоматизацию; упаковываю в Docker и настраиваю CI/CD. Практический подход: сначала измеримая ценность, затем красота. Предпочитаю ясный код и простую архитектуру.</p>
+              <p data-i18n="en">Middle .NET developer from Ryazan, Russia (since 2022). I build reliable backend services, integrations and automation; package with Docker and set up CI/CD. Pragmatic and value-driven: ship measurable outcomes first, keep the architecture simple.</p>
             </div>
           </div>
 
-          <div class="section will-animate">
+          <div class="section">
+            <div class="metrics">
+              <div class="metric"><div class="num">3+ yrs</div><div class="cap" data-i18n="ru">коммерческий опыт</div><div class="cap" data-i18n="en">commercial exp.</div></div>
+              <div class="metric"><div class="num">200+</div><div class="cap" data-i18n="ru">задач по .NET</div><div class="cap" data-i18n="en">.NET tasks</div></div>
+              <div class="metric"><div class="num">2</div><div class="cap" data-i18n="ru">интеграции Python</div><div class="cap" data-i18n="en">Python integra.</div></div>
+            </div>
+          </div>
+
+          <div class="section">
             <h2 data-i18n="ru">Опыт</h2>
             <h2 data-i18n="en">Experience</h2>
-
             <article class="item">
               <h3 data-i18n="ru">Абонент+ — Программист/Разработчик</h3>
               <h3 data-i18n="en">Abonent+ — Software Engineer</h3>
-              <div class="meta">
-                <span data-i18n="ru">сентябрь 2022 — октябрь 2025, Рязань (B2B, ЖКХ)</span>
-                <span data-i18n="en">Sep 2022 — Oct 2025, Ryazan (B2B, Utilities)</span>
-              </div>
+              <div class="meta"><span data-i18n="ru">сентябрь 2022 — октябрь 2025, Рязань (B2B, ЖКХ)</span><span data-i18n="en">Sep 2022 — Oct 2025, Ryazan (B2B, Utilities)</span></div>
               <ul class="bullets">
-                <li data-i18n="ru">Сопровождение ПИР «Претензия» (судебно-исковая работа, .NET Framework): выполнено 200+ задач, стабилизирована поставка обновлений.</li>
-                <li data-i18n="en">Maintained “Pretenziya” litigation workflow (.NET Framework): delivered 200+ tasks; improved release stability.</li>
-
-                <li data-i18n="ru">Разработал 2 интеграционных сервиса (ФССП и ГАС «Правосудие», Python), сократив ручные операции и время получения статусов дел.</li>
-                <li data-i18n="en">Built two integration services (FSSP and GAS “Pravosudie”, Python) reducing manual work and speeding up case status retrieval.</li>
-
-                <li data-i18n="ru">Помог в миграции «Претензии» на .NET Core: удалил/заменил ~80% несовместимых зависимостей, подготовил почву к переносу модулей.</li>
-                <li data-i18n="en">Assisted migration of “Pretenziya” to .NET Core: removed/replaced ~80% incompatible deps, enabling further module porting.</li>
-
-                <li data-i18n="ru">Разработал несколько внутренних сервисов и утилит для автоматизации рабочих процессов.</li>
-                <li data-i18n="en">Built several internal services and utilities to automate daily workflows.</li>
+                <li data-i18n="ru">Сопровождение ПИР «Претензия» (.NET Framework): выполнено 200+ задач, стабилизированы релизы.</li>
+                <li data-i18n="en">Maintained “Pretenziya” (.NET Framework): 200+ tasks; releases stabilized.</li>
+                <li data-i18n="ru">2 сервиса интеграции (ФССП, ГАС «Правосудие», Python): сокращены ручные операции и время получения статусов дел.</li>
+                <li data-i18n="en">Two integrations (FSSP, GAS “Pravosudie”, Python): reduced manual ops and status retrieval time.</li>
+                <li data-i18n="ru">Подготовка миграции на .NET Core: удалено/заменено ~80% несовместимых зависимостей.</li>
+                <li data-i18n="en">.NET Core migration prep: removed/replaced ~80% incompatible deps.</li>
+                <li data-i18n="ru">Внутренние сервисы и утилиты для автоматизации процессов.</li>
+                <li data-i18n="en">Internal services and utilities for process automation.</li>
               </ul>
             </article>
           </div>
 
-          <div class="section will-animate">
+          <div class="section">
             <h2 data-i18n="ru">Проекты</h2>
             <h2 data-i18n="en">Projects</h2>
-
             <article class="item">
               <h3 data-i18n="ru">Сайт «Школа вдохновения» — фуллстек</h3>
               <h3 data-i18n="en">“School of Inspiration” website — full-stack</h3>
-              <div class="meta">
-                <span>.NET 8, EF Core, ReactJS, PostgreSQL</span>
-                ·
-                <a href="https://vdokhnovenierzn.ru/" target="_blank" rel="noopener">vdokhnovenierzn.ru</a>
-              </div>
+              <div class="meta"><span>.NET 8, EF Core, ReactJS, PostgreSQL</span> · <a href="https://vdokhnovenierzn.ru/" target="_blank" rel="noopener">vdokhnovenierzn.ru</a></div>
               <ul class="bullets">
-                <li data-i18n="ru">100% реализации: фронт+бэк, деплой, база; админ-функции и публичные страницы.</li>
-                <li data-i18n="en">End-to-end ownership: front+back, deploy, DB; admin functions and public pages.</li>
+                <li data-i18n="ru">Полная реализация: фронт+бэк, БД и деплой; админ-функции и публичные страницы.</li>
+                <li data-i18n="en">End-to-end: front+back, DB and deploy; admin features and public pages.</li>
               </ul>
             </article>
           </div>
+
+          <div class="section">
+            <h2 data-i18n="ru">Вехи</h2>
+            <h2 data-i18n="en">Timeline</h2>
+            <div class="item timeline">
+              <div class="tl-item">
+                <div class="tl-title" data-i18n="ru">Абонент+ (старт коммерческого опыта)</div>
+                <div class="tl-title" data-i18n="en">Abonent+ (start of commercial experience)</div>
+                <div class="tl-meta">09.2022</div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-title" data-i18n="ru">Интеграции ФССП и ГАС «Правосудие» (Python)</div>
+                <div class="tl-title" data-i18n="en">FSSP & GAS “Pravosudie” integrations (Python)</div>
+                <div class="tl-meta">2023–2024</div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-title" data-i18n="ru">Подготовка миграции «Претензии» на .NET Core</div>
+                <div class="tl-title" data-i18n="en">“Pretenziya” .NET Core migration prep</div>
+                <div class="tl-meta">2024–2025</div>
+              </div>
+            </div>
+          </div>
         </section>
 
-        <!-- Правая колонка -->
         <section class="right">
-          <div class="section will-animate">
+          <div class="section">
             <h2 data-i18n="ru">Контакты</h2>
             <h2 data-i18n="en">Contacts</h2>
-            <div class="list contact">
-              <div class="item">
-                <div><strong data-i18n="ru">Город:</strong> <span data-i18n="ru">Рязань</span><span data-i18n="en">Ryazan, Russia</span></div>
-                <div><strong>Тел.:</strong> <a href="tel:+79105031832">+7 (910) 503-18-32</a></div>
-                <div><strong>Email:</strong> <a href="mailto:egorgavrilin2014@yandex.ru">egorgavrilin2014@yandex.ru</a></div>
-                <div><strong>Telegram:</strong> <a href="https://t.me/sothug" target="_blank" rel="noopener">@sothug</a></div>
-                <div><strong>GitHub:</strong> <a href="https://github.com/sothug" target="_blank" rel="noopener">github.com/sothug</a></div>
+
+            <div class="contacts">
+              <a class="contact-card" href="https://yandex.ru/maps/?text=Рязань" target="_blank" rel="noopener" aria-label="Город Рязань">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 21s-7-4.35-7-10a7 7 0 1 1 14 0c0 5.65-7 10-7 10Z"/><circle cx="12" cy="11" r="3"/></svg>
+                <div style="min-width:0">
+                  <div class="label" data-i18n="ru">Город</div>
+                  <div class="label" data-i18n="en">City</div>
+                  <div class="value" data-i18n="ru">Рязань</div>
+                  <div class="value" data-i18n="en">Ryazan, Russia</div>
+                </div>
+              </a>
+
+              <a class="contact-card" href="tel:+79105031832" aria-label="Телефон">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v2a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 1h2a2 2 0 0 1 2 1.72c.12.9.3 1.78.57 2.63a2 2 0 0 1-.45 2.11L7.1 8.9a16 16 0 0 0 6 6l1.44-1.13a2 2 0 0 1 2.11-.45c.85.27 1.73.45 2.63.57A2 2 0 0 1 22 16.92Z"/></svg>
+                <div style="min-width:0">
+                  <div class="label" data-i18n="ru">Телефон</div>
+                  <div class="label" data-i18n="en">Phone</div>
+                  <div class="value">+7 (910) 503-18-32</div>
+                </div>
+              </a>
+
+              <a class="contact-card" href="mailto:egorgavrilin2014@yandex.ru" aria-label="Email">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="m22 6-10 7L2 6"/></svg>
+                <div style="min-width:0">
+                  <div class="label">Email</div>
+                  <div class="value">egorgavrilin2014@yandex.ru</div>
+                </div>
+              </a>
+
+              <a class="contact-card" href="https://t.me/sothug" target="_blank" rel="noopener" aria-label="Telegram @sothug">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                <div style="min-width:0">
+                  <div class="label">Telegram</div>
+                  <div class="value">@sothug</div>
+                </div>
+              </a>
+
+              <a class="contact-card" href="https://github.com/sothug" target="_blank" rel="noopener" aria-label="GitHub sothug">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.35-1.76-1.35-1.76-1.11-.76.08-.75.08-.75 1.22.09 1.86 1.25 1.86 1.25 1.09 1.86 2.86 1.32 3.56 1.01.11-.8.43-1.32.78-1.63-2.67-.3-5.47-1.34-5.47-5.98 0-1.32.47-2.4 1.24-3.24-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.24 2.87.12 3.17.77.84 1.24 1.92 1.24 3.24 0 4.65-2.8 5.68-5.48 5.98.44.38.83 1.12.83 2.26v3.35c0 .32.22.7.83.58A12 12 0 0 0 12 .5z"/></svg>
+                <div style="min-width:0">
+                  <div class="label">GitHub</div>
+                  <div class="value">github.com/sothug</div>
+                </div>
+              </a>
+            </div>
+
+            <div class="print-contacts">
+              <div><strong data-i18n="ru">Город:</strong> <span data-i18n="ru">Рязань</span><span data-i18n="en">Ryazan, Russia</span></div>
+              <div><strong>Тел.:</strong> +7 (910) 503-18-32</div>
+              <div><strong>Email:</strong> egorgavrilin2014@yandex.ru</div>
+              <div><strong>Telegram:</strong> https://t.me/sothug</div>
+              <div><strong>GitHub:</strong> https://github.com/sothug</div>
+            </div>
+          </div>
+
+          <div class="section">
+            <h2 data-i18n="ru">Навыки</h2>
+            <h2 data-i18n="en">Skills</h2>
+            <div class="item">
+              <div class="skill-graph">
+                <div class="skill"><div class="name">.NET / C#</div><div class="bar"><span style="--w:85%"></span></div></div>
+                <div class="skill"><div class="name">ASP.NET Core</div><div class="bar"><span style="--w:82%"></span></div></div>
+                <div class="skill"><div class="name">EF Core</div><div class="bar"><span style="--w:78%"></span></div></div>
+                <div class="skill"><div class="name">REST API</div><div class="bar"><span style="--w:80%"></span></div></div>
+                <div class="skill"><div class="name">PostgreSQL / SQL</div><div class="bar"><span style="--w:74%"></span></div></div>
+                <div class="skill"><div class="name">Python (интеграции)</div><div class="bar"><span style="--w:65%"></span></div></div>
+                <div class="skill"><div class="name">Docker</div><div class="bar"><span style="--w:70%"></span></div></div>
+                <div class="skill"><div class="name">CI/CD (GitHub/GitLab)</div><div class="bar"><span style="--w:68%"></span></div></div>
+                <div class="skill"><div class="name">React (базово)</div><div class="bar"><span style="--w:45%"></span></div></div>
+                <div class="skill"><div class="name" data-i18n="ru">Командная работа</div><div class="name" data-i18n="en">Teamwork</div><div class="bar"><span style="--w:80%"></span></div></div>
               </div>
             </div>
           </div>
 
-          <div class="section will-animate">
-            <h2 data-i18n="ru">Навыки</h2>
-            <h2 data-i18n="en">Skills</h2>
-            <div class="item">
-              <!-- Список составлен из вашего текста, приоритизировал под .NET-бэкенд -->
-              <div class="pill">.NET / C#</div>
-              <div class="pill">ASP.NET Core</div>
-              <div class="pill">Entity Framework Core</div>
-              <div class="pill">Python (интеграции, утилиты)</div>
-              <div class="pill">Docker</div>
-              <div class="pill">GitHub / GitLab CI/CD (базовый)</div>
-              <div class="pill">REST API</div>
-              <div class="pill">PostgreSQL / SQL</div>
-              <div class="pill">React (базово, при необходимости)</div>
-              <div class="pill">Командная работа</div>
-              <div class="pill">Целеустремлённость</div>
-              <div class="pill">Поиск решений / самостоятельность</div>
-            </div>
-          </div>
-
-          <div class="section will-animate">
+          <div class="section">
             <h2 data-i18n="ru">Образование</h2>
             <h2 data-i18n="en">Education</h2>
             <div class="item">
               <h3 data-i18n="ru">РГРТУ, 09.03.02 Информационные системы и технологии</h3>
-              <h3 data-i18n="en">RSREU, B.Sc. in Information Systems and Technologies</h3>
+              <h3 data-i18n="en">RSREU, B.Sc. Information Systems and Technologies</h3>
               <div class="meta" data-i18n="ru">2020–2024</div>
               <div class="meta" data-i18n="en">2020–2024</div>
             </div>
           </div>
 
-          <div class="section will-animate">
+          <div class="section">
             <h2 data-i18n="ru">О себе</h2>
             <h2 data-i18n="en">About</h2>
             <div class="item">
-              <p data-i18n="ru">Предпочитаю бэкенд и системную интеграцию. К фронтенду отношусь утилитарно: могу сделать, когда это ускоряет дело, но не планирую уходить целиком во фронт.</p>
-              <p data-i18n="en">I prefer backend and systems integration. Frontend is fine pragmatically if it unblocks delivery, but my focus is not pure frontend.</p>
+              <p data-i18n="ru">Предпочитаю бэкенд и системную интеграцию; к фронту отношусь утилитарно. Ценю простые решения, тестируемость и наблюдаемость.</p>
+              <p data-i18n="en">Prefer backend and systems integration; pragmatic about frontend. Value simplicity, testability and observability.</p>
             </div>
           </div>
         </section>
       </div>
     </main>
-
-    <footer class="print-hide" style="margin-top:14px; color:var(--muted); font-size:13px;">
-      <span data-i18n="ru">Нажмите «Печать / PDF», чтобы сохранить текущую языковую версию в один лист A4.</span>
-      <span data-i18n="en">Use “Print / PDF” to export the currently selected language to a single A4 page.</span>
-    </footer>
   </div>
 
   <script>
-    // Язык RU/EN с сохранением выбора в localStorage; печатается активный язык.
-    const DOC = document.documentElement;
-    const btnRu = document.getElementById('btn-ru');
-    const btnEn = document.getElementById('btn-en');
+    const DOC=document.documentElement;
+    const btnRu=document.getElementById('btn-ru');
+    const btnEn=document.getElementById('btn-en');
     function setLang(lang){
-      DOC.setAttribute('lang', lang === 'ru' ? 'ru' : 'en');
-      DOC.setAttribute('data-lang', lang);
-      localStorage.setItem('cv_lang', lang);
-      btnRu.classList.toggle('active', lang==='ru');
-      btnEn.classList.toggle('active', lang==='en');
-      btnRu.setAttribute('aria-selected', lang==='ru');
-      btnEn.setAttribute('aria-selected', lang==='en');
+      DOC.setAttribute('lang',lang==='ru'?'ru':'en');
+      DOC.setAttribute('data-lang',lang);
+      localStorage.setItem('cv_lang',lang);
+      btnRu.classList.toggle('active',lang==='ru');
+      btnEn.classList.toggle('active',lang==='en');
+      btnRu.setAttribute('aria-selected',lang==='ru');
+      btnEn.setAttribute('aria-selected',lang==='en');
     }
-    btnRu.addEventListener('click', ()=>setLang('ru'));
-    btnEn.addEventListener('click', ()=>setLang('en'));
-    setLang(localStorage.getItem('cv_lang') || 'ru');
-
-    // Мягкие анимации появления на экране (отключены в печати через @media print)
-    const io = new IntersectionObserver(entries=>{
-      for(const e of entries){
-        if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
-      }
-    }, {threshold:.12});
-    document.querySelectorAll('.will-animate').forEach(el=>io.observe(el));
+    btnRu.addEventListener('click',()=>setLang('ru'));
+    btnEn.addEventListener('click',()=>setLang('en'));
+    setLang(localStorage.getItem('cv_lang')||'ru');
   </script>
 </body>
 </html>
