@@ -124,9 +124,8 @@ a:hover{text-decoration:underline}
 .footer p{margin:0}
 
 /* i18n */
-[data-i18n]{display:none}
-html[data-lang="ru"] [data-i18n="ru"]{display:initial}
-html[data-lang="en"] [data-i18n="en"]{display:initial}
+html[data-lang="ru"] [data-i18n="en"],
+html[data-lang="en"] [data-i18n="ru"]{display:none}
 
 @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 
