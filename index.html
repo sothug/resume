@@ -35,12 +35,11 @@
           <div class="hero-head">
             <img class="avatar" src="avatar.jpg" alt="Егор Гаврилин" width="84" height="84"/>
             <h1><span data-i18n="ru">Егор Гаврилин</span><span data-i18n="en">Egor Gavrilin</span></h1>
-            <span class="badge"><span data-i18n="ru">Middle · 4+ года коммерческого опыта</span><span data-i18n="en">Middle · 4+ years of commercial experience</span></span>
           </div>
-          <p class="hero-sub" data-i18n="ru">Backend-разработчик · C# / .NET</p>
+          <p class="hero-sub" data-i18n="ru">Backend-разработчик C# / .NET</p>
           <p class="hero-sub" data-i18n="en">Backend Developer · C# / .NET</p>
-          <p class="hero-sub hero-loc" data-i18n="ru">Рязань · удалённо по РФ · готов к переезду в Москву</p>
-          <p class="hero-sub hero-loc" data-i18n="en">Ryazan, Russia · remote within Russia · open to relocating to Moscow</p>
+          <p class="hero-sub hero-loc" data-i18n="ru">Рязань, МСК (UTC+3). Удалённо по России, готов к переезду в Москву</p>
+          <p class="hero-sub hero-loc" data-i18n="en">Ryazan, Russia, Moscow time (UTC+3). Remote within Russia, open to relocating to Moscow</p>
         </div>
         <div class="controls">
           <div class="segmented" role="tablist" aria-label="Language">
@@ -56,11 +55,11 @@
       <div class="resume-inner">
         <section class="left">
           <div class="section">
-            <h2 data-i18n="ru">Кратко</h2>
+            <h2 data-i18n="ru">О себе</h2>
             <h2 data-i18n="en">Summary</h2>
             <div class="summary">
-              <p data-i18n="ru">Разрабатываю серверные приложения на C#/.NET с 2022 года: Web API, интеграции с внешними системами, SQL и развёртывание в Docker на Linux. Использовал Python для интеграционных сервисов. В Loginom работаю над компонентом Integrator: асинхронная обработка запросов, авторизация и разграничение доступа.</p>
-              <p data-i18n="en">Building backend applications with C#/.NET since 2022: Web APIs, external integrations, SQL and Docker deployments on Linux. Used Python for integration services. At Loginom, I work on the Integrator component, implementing asynchronous request processing, authorization and access control.</p>
+              <p data-i18n="ru">Backend-разработчик на C#/.NET, 4 года коммерческой разработки, около 90% задач — серверная часть. Пишу Web API, асинхронную и фоновую обработку, интеграционные сервисы и SDK для внешних и государственных систем (ГИС ЖКХ, ГАС «Правосудие», ФССП). Работаю с MS SQL и PostgreSQL, развёртываю в Docker на Linux. В Loginom добавил в компонент Integrator асинхронный режим выполнения запросов и проброс авторизации в Loginom Server.</p>
+              <p data-i18n="en">C#/.NET backend developer with 4 years of commercial experience, about 90% of it on the server side. I build Web APIs, asynchronous and background processing, integration services and SDKs for external and government systems (GIS ZhKKh, GAS Pravosudie, FSSP). I work with MS SQL and PostgreSQL and deploy with Docker on Linux. At Loginom I added an asynchronous execution mode and authorization pass-through to Loginom Server in the Integrator component.</p>
             </div>
           </div>
 
@@ -69,52 +68,54 @@
             <h2 data-i18n="en">Experience</h2>
 
             <article class="item">
-              <h3 data-i18n="ru">Loginom Company — Fullstack-разработчик</h3>
-              <h3 data-i18n="en">Loginom Company — Fullstack Developer</h3>
+              <h3 data-i18n="ru">Loginom Company — Инженер-программист</h3>
+              <h3 data-i18n="en">Loginom Company — Software Engineer</h3>
               <div class="meta"><span data-i18n="ru">авг. 2026 — настоящее время</span><span data-i18n="en">Aug 2026 — present</span></div>
-              <div class="ctx" data-i18n="ru">Платформа аналитики данных · компонент Integrator</div>
-              <div class="ctx" data-i18n="en">Data analytics platform · Integrator component</div>
+              <div class="ctx" data-i18n="ru">Low-code платформа анализа данных. Работаю над Loginom Integrator — компонентом, который публикует сценарии Loginom как веб-сервисы.</div>
+              <div class="ctx" data-i18n="en">Low-code data analytics platform. I work on Loginom Integrator, the component that publishes Loginom workflows as web services.</div>
               <ul class="bullets">
-                <li data-i18n="ru">Реализовал асинхронную модель обработки запросов в серверной части компонента.</li>
-                <li data-i18n="en">Implemented an asynchronous request-processing model in the server-side component.</li>
-                <li data-i18n="ru">Реализовал авторизацию и разграничение доступа.</li>
-                <li data-i18n="en">Implemented authorization and access control.</li>
+                <li data-i18n="ru">Добавил асинхронный режим выполнения запросов (раньше был только синхронный). Клиент получает результат опросом (polling) или через callback, фоновые задачи хранятся ограниченное время и затем удаляются.</li>
+                <li data-i18n="en">Added an asynchronous request execution mode (previously synchronous only). Clients get results by polling or via callback; background jobs are kept for a limited time and then removed.</li>
+                <li data-i18n="ru">Реализовал проброс авторизации Basic и Bearer (OpenID) из Integrator в Loginom Server и настройку её обязательности для опубликованных сервисов.</li>
+                <li data-i18n="en">Implemented Basic and Bearer (OpenID) authorization pass-through from Integrator to Loginom Server, with a setting that makes authorization required for published services.</li>
+                <li data-i18n="ru">Обеспечил потокобезопасность фоновой обработки: блокировки с учётом времени выполнения, без вызова async-методов под lock.</li>
+                <li data-i18n="en">Made background processing thread-safe: locking designed around execution time, with no async calls inside locks.</li>
               </ul>
-              <div class="stack"><strong>Stack:</strong> C#, .NET, Web services, Git</div>
+              <div class="stack"><strong>Stack:</strong> C#, .NET 8, ASP.NET Core, Git</div>
             </article>
 
             <article class="item">
-              <h3 data-i18n="ru">Абонент+ — Fullstack-разработчик</h3>
-              <h3 data-i18n="en">Abonent+ — Fullstack Developer</h3>
-              <div class="meta"><span data-i18n="ru">сент. 2022 — авг. 2026</span><span data-i18n="en">Sep 2022 — Aug 2026</span></div>
-              <div class="ctx" data-i18n="ru">B2B / ЖКХ · веб-сервис «Претензия»</div>
-              <div class="ctx" data-i18n="en">B2B / utilities · Pretenziya web service</div>
+              <h3 data-i18n="ru">Абонент+ — Инженер-программист</h3>
+              <h3 data-i18n="en">Abonent+ — Software Engineer</h3>
+              <div class="meta"><span data-i18n="ru">сент. 2022 — авг. 2026 · fullstack, около 90% задач — backend</span><span data-i18n="en">Sep 2022 — Aug 2026 · fullstack, about 90% backend</span></div>
+              <div class="ctx" data-i18n="ru">«Претензия» — B2B-сервис для организаций ЖКХ: досудебная и судебная работа с должниками, подготовка документов для суда. 60+ организаций-клиентов, около 500 пользователей в день, около 300 000 итоговых документов.</div>
+              <div class="ctx" data-i18n="en">Pretenziya, a B2B service for utility companies: pre-trial and court debt collection, including court documents. 60+ client organizations, about 500 daily users, about 300,000 final documents.</div>
               <ul class="bullets">
-                <li data-i18n="ru">Ключевой разработчик «Претензии» — сервиса автоматизации досудебной и судебной работы с должниками ЖКХ, включая подготовку документов для суда.</li>
-                <li data-i18n="en">Key developer of Pretenziya, a service automating pre-litigation and court proceedings for utilities debt collection, including court document preparation.</li>
-                <li data-i18n="ru">Развивал backend на C#/ASP.NET, Web API и MVC, поддерживал веб-интерфейс на AngularJS. Выполнил 200+ задач: функции, доработки для заказчиков и исправления дефектов.</li>
-                <li data-i18n="en">Developed the C#/ASP.NET backend, Web API and MVC, and maintained the AngularJS interface. Completed 200+ tasks: features, customer requests and bug fixes.</li>
-                <li data-i18n="ru">Реализовал интеграции с ГАС «Правосудие», ФССП и ФГИС УТКО; для интеграционных сервисов использовал Python.</li>
-                <li data-i18n="en">Integrated GAS Pravosudie, FSSP and FGIS UTKO; used Python for integration services.</li>
-                <li data-i18n="ru">При подготовке миграции на .NET Core удалил или заменил около 80% несовместимых зависимостей.</li>
-                <li data-i18n="en">Removed or replaced approximately 80% of incompatible dependencies while preparing a migration to .NET Core.</li>
-                <li data-i18n="ru">Работал с MS SQL и PostgreSQL, оптимизировал SQL-запросы. Развёртывал сервис в Docker на Linux-серверах.</li>
-                <li data-i18n="en">Worked with MS SQL and PostgreSQL, optimized SQL queries, and deployed the service with Docker on Linux.</li>
+                <li data-i18n="ru">Основной разработчик в команде из трёх человек (тимлид, разработчик, аналитик-тестировщик): серверная часть на C#, ASP.NET MVC и Web API, поддержка интерфейса на AngularJS.</li>
+                <li data-i18n="en">Main developer in a team of three (team lead, developer, analyst/QA): C# backend on ASP.NET MVC and Web API, AngularJS frontend maintenance.</li>
+                <li data-i18n="ru">Написал на C# SDK для ГИС ЖКХ, на котором работает интеграционный сервис.</li>
+                <li data-i18n="en">Wrote a C# SDK for GIS ZhKKh (the national housing and utilities system) that powers the integration service.</li>
+                <li data-i18n="ru">Автоматизировал обмен с ГАС «Правосудие», ФССП и ФГИС УТКО: сервисы на Python и Playwright, которые выполняют действия пользователя в этих системах.</li>
+                <li data-i18n="en">Automated data exchange with GAS Pravosudie, FSSP and FGIS UTKO: Python and Playwright services that perform user actions in these systems.</li>
+                <li data-i18n="ru">Довёл миграцию с ASP.NET MVC (.NET Framework) на ASP.NET Core (.NET 8) до работающей сборки: удалил или заменил 20–30 несовместимых зависимостей, для заранее перенесённых модулей написал unit-тесты на xUnit.</li>
+                <li data-i18n="en">Brought the migration from ASP.NET MVC (.NET Framework) to ASP.NET Core (.NET 8) to a working build: removed or replaced 20–30 incompatible dependencies and wrote xUnit tests for modules migrated ahead of time.</li>
+                <li data-i18n="ru">Разбирал обращения клиентов о медленных страницах: анализ планов выполнения, переписывание запросов, индексы (MS SQL, PostgreSQL).</li>
+                <li data-i18n="en">Handled customer reports about slow pages: execution plan analysis, query rewrites and indexes (MS SQL, PostgreSQL).</li>
+                <li data-i18n="ru">Использовал RabbitMQ для очередей. В соседнем сервисе компании использовал Redis для кэширования.</li>
+                <li data-i18n="en">Used RabbitMQ for queues and Redis for caching in another company service.</li>
+                <li data-i18n="ru">Готовил Dockerfile для развёртывания на Linux-серверах вместе с DevOps-инженером.</li>
+                <li data-i18n="en">Wrote Dockerfiles for Linux server deployment together with the DevOps engineer.</li>
               </ul>
-              <div class="stack"><strong>Stack:</strong> C#, ASP.NET Core / MVC, Entity Framework, MS SQL, PostgreSQL, Python, AngularJS, Docker, Linux, Git</div>
+              <div class="stack"><strong>Stack:</strong> C#, .NET Framework, .NET 8, ASP.NET MVC, ASP.NET Core, Web API, Entity Framework, MS SQL, PostgreSQL, Redis, RabbitMQ, xUnit, Python, Playwright, AngularJS, Docker, Linux, Git</div>
             </article>
-          </div>
 
-          <div class="section">
-            <h2 data-i18n="ru">Проекты</h2>
-            <h2 data-i18n="en">Projects</h2>
             <article class="item">
-              <h3 data-i18n="ru">«Школа вдохновения»</h3>
-              <h3 data-i18n="en">School of Inspiration</h3>
-              <div class="meta"><span data-i18n="ru">Fullstack · веб-сайт</span><span data-i18n="en">Fullstack · website</span> · <a href="https://vdokhnovenierzn.ru/" target="_blank" rel="noopener">vdokhnovenierzn.ru</a></div>
+              <h3 data-i18n="ru">«Школа вдохновения», фриланс — Fullstack-разработчик</h3>
+              <h3 data-i18n="en">School of Inspiration, freelance — Fullstack Developer</h3>
+              <div class="meta"><span data-i18n="ru">сент. 2024 — май 2025</span><span data-i18n="en">Sep 2024 — May 2025</span> · <a href="https://vdokhnovenierzn.ru/" target="_blank" rel="noopener">vdokhnovenierzn.ru</a></div>
               <ul class="bullets">
-                <li data-i18n="ru">Разработал frontend и backend сайта, базу данных, административные функции и публичные страницы. Выполнил развёртывание.</li>
-                <li data-i18n="en">Built the frontend, backend and database, including administration features and public pages. Deployed the website.</li>
+                <li data-i18n="ru">Сделал сайт для частной школы под ключ: frontend, backend, база данных, админка, развёртывание.</li>
+                <li data-i18n="en">Built a turnkey website for a private school: frontend, backend, database, admin panel and deployment.</li>
               </ul>
               <div class="stack"><strong>Stack:</strong> .NET 8, EF Core, React, PostgreSQL</div>
             </article>
@@ -127,19 +128,19 @@
             <h2 data-i18n="en">Contacts</h2>
 
             <div class="contacts">
-              <a class="contact-card" href="mailto:ggfffg747@gmail.com" aria-label="Email">
+              <a class="contact-card" href="mailto:egorgavrilin2014@yandex.ru" aria-label="Email">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" focusable="false"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="m22 6-10 7L2 6"/></svg>
                 <div class="cc-body">
                   <div class="label">Email</div>
-                  <div class="value">ggfffg747@gmail.com</div>
+                  <div class="value">egorgavrilin2014@yandex.ru</div>
                 </div>
               </a>
 
-              <a class="contact-card" href="https://t.me/sothug" target="_blank" rel="noopener" aria-label="Telegram @sothug">
+              <a class="contact-card" href="https://t.me/gavrilin_egor" target="_blank" rel="noopener" aria-label="Telegram @gavrilin_egor">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" focusable="false"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
                 <div class="cc-body">
                   <div class="label">Telegram</div>
-                  <div class="value">@sothug</div>
+                  <div class="value">@gavrilin_egor</div>
                 </div>
               </a>
 
@@ -164,8 +165,8 @@
 
             <div class="print-contacts">
               <div><strong data-i18n="ru">Город:</strong><strong data-i18n="en">City:</strong> <span data-i18n="ru">Рязань</span><span data-i18n="en">Ryazan, Russia</span></div>
-              <div><strong>Email:</strong> ggfffg747@gmail.com</div>
-              <div><strong>Telegram:</strong> https://t.me/sothug</div>
+              <div><strong>Email:</strong> egorgavrilin2014@yandex.ru</div>
+              <div><strong>Telegram:</strong> https://t.me/gavrilin_egor</div>
               <div><strong>GitHub:</strong> https://github.com/sothug</div>
             </div>
           </div>
@@ -175,17 +176,16 @@
             <h2 data-i18n="en">Skills</h2>
             <div class="item">
               <dl class="skills">
-                <div class="skill-group"><dt>Backend</dt><dd>C#, .NET, ASP.NET Core / MVC, Web API, .NET Framework, LINQ, Entity Framework</dd></div>
-                <div class="skill-group"><dt data-i18n="ru">Данные</dt><dt data-i18n="en">Data</dt><dd>MS SQL, PostgreSQL, SQL</dd></div>
-                <div class="skill-group"><dt data-i18n="ru">Интеграции</dt><dt data-i18n="en">Integrations</dt><dd><span data-i18n="ru">REST API, Python, внешние веб-сервисы</span><span data-i18n="en">REST API, Python, external web services</span></dd></div>
-                <div class="skill-group"><dt data-i18n="ru">Инструменты</dt><dt data-i18n="en">Tools</dt><dd>Docker, Linux, Git</dd></div>
-                <div class="skill-group"><dt>Frontend</dt><dd>JavaScript, AngularJS</dd></div>
+                <div class="skill-group"><dt>Backend</dt><dd><span data-i18n="ru">C#, .NET 8, .NET Framework, ASP.NET Core, ASP.NET MVC, Web API, LINQ, async/await, многопоточность</span><span data-i18n="en">C#, .NET 8, .NET Framework, ASP.NET Core, ASP.NET MVC, Web API, LINQ, async/await, multithreading</span></dd></div>
+                <div class="skill-group"><dt data-i18n="ru">Данные</dt><dt data-i18n="en">Data</dt><dd><span data-i18n="ru">MS SQL, PostgreSQL, Entity Framework, Redis, оптимизация запросов и индексов</span><span data-i18n="en">MS SQL, PostgreSQL, Entity Framework, Redis, query and index optimization</span></dd></div>
+                <div class="skill-group"><dt data-i18n="ru">Интеграции</dt><dt data-i18n="en">Integrations</dt><dd>REST, Swagger / OpenAPI, RabbitMQ, Python + Playwright</dd></div>
+                <div class="skill-group"><dt data-i18n="ru">Архитектура</dt><dt data-i18n="en">Architecture</dt><dd><span data-i18n="ru">микросервисы, отдельные интеграционные сервисы</span><span data-i18n="en">microservices, standalone integration services</span></dd></div>
+                <div class="skill-group"><dt data-i18n="ru">Авторизация</dt><dt data-i18n="en">Auth</dt><dd>Basic, Bearer / OpenID</dd></div>
+                <div class="skill-group"><dt data-i18n="ru">Качество</dt><dt data-i18n="en">Quality</dt><dd>xUnit, Serilog, NLog</dd></div>
+                <div class="skill-group"><dt data-i18n="ru">Инфраструктура</dt><dt data-i18n="en">Infrastructure</dt><dd>Docker, Linux, Git</dd></div>
+                <div class="skill-group"><dt>Frontend</dt><dd>JavaScript, AngularJS, React</dd></div>
+                <div class="skill-group"><dt data-i18n="ru">В своих проектах</dt><dt data-i18n="en">Personal projects</dt><dd>GitHub Actions, Prometheus, Grafana, Clean Architecture</dd></div>
               </dl>
-              <div class="oop">OOP · SOLID</div>
-              <h3 class="subhead" data-i18n="ru">Личные проекты и изучение</h3>
-              <h3 class="subhead" data-i18n="en">Personal projects &amp; self-study</h3>
-              <p class="note" data-i18n="ru">Kafka, Redis, CI/CD, Grafana, Prometheus и микросервисная архитектура — практика в личных проектах и самостоятельное изучение; без коммерческого production-опыта.</p>
-              <p class="note" data-i18n="en">Kafka, Redis, CI/CD, Grafana, Prometheus and microservice architecture — personal-project practice and self-study; no commercial production experience.</p>
             </div>
           </div>
 
@@ -207,15 +207,6 @@
             <div class="item">
               <p class="lead" data-i18n="ru">Русский — родной · Английский — A2</p>
               <p class="lead" data-i18n="en">Russian — native · English — A2</p>
-            </div>
-          </div>
-
-          <div class="section">
-            <h2 data-i18n="ru">Следующий шаг</h2>
-            <h2 data-i18n="en">Next role</h2>
-            <div class="item">
-              <p class="lead" data-i18n="ru">Серверная разработка на .NET: интеграции, микросервисы и распределённые системы.</p>
-              <p class="lead" data-i18n="en">.NET backend development: integrations, microservices and distributed systems.</p>
             </div>
           </div>
         </section>
