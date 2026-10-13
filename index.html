@@ -28,165 +28,105 @@
   </script>
 </head>
 <body>
-  <div class="container">
-    <header class="hero">
-      <div class="hero-inner">
-        <div class="hero-title">
-          <div class="hero-head">
-            <img class="avatar" src="avatar.jpg" alt="Егор Гаврилин" width="84" height="84"/>
-            <h1><span>Егор Гаврилин</span></h1>
-          </div>
-          <p class="hero-sub">Backend-разработчик C# / .NET</p>
-          <p class="hero-sub hero-loc">Рязань, МСК (UTC+3). Удалённо по России, готов к переезду в Москву</p>
-        </div>
-        <div class="controls">
-          <nav class="segmented" aria-label="Язык">
-            <a href="./" class="active" aria-current="page">RU</a>
-            <a href="en/" lang="en" hreflang="en">EN</a>
-          </nav>
-          <a class="btn primary" href="https://github.com/sothug" target="_blank" rel="noopener">GitHub</a>
-        </div>
-      </div>
-    </header>
+<div class="page">
+  <nav class="lang" aria-label="Язык"><a href="./" aria-current="page">RU</a> <a href="en/" lang="en" hreflang="en">EN</a></nav>
+  <header class="head">
+    <img class="avatar" src="avatar.jpg" alt="Егор Гаврилин" width="112" height="112">
+    <div class="head-text">
+      <h1>Егор Гаврилин</h1>
+      <p class="role">Backend-разработчик C# / .NET</p>
+      <p class="where">Рязань, МСК (UTC+3). Удалённо по России, готов к переезду в Москву</p>
+    </div>
+    <ul class="contacts">
+      <li><a href="mailto:egorgavrilin2014@yandex.ru">egorgavrilin2014@yandex.ru</a></li>
+      <li><a href="https://t.me/gavrilin_egor">t.me/gavrilin_egor</a></li>
+      <li><a href="https://github.com/sothug">github.com/sothug</a></li>
+    </ul>
+  </header>
 
-    <main class="resume">
-      <div class="resume-inner">
-        <section class="left">
-          <div class="section">
-            <h2>О себе</h2>
-            <div class="summary">
-              <p>Backend-разработчик на C#/.NET, 4 года коммерческой разработки, около 90% задач — серверная часть. Пишу Web API, асинхронную и фоновую обработку, интеграционные сервисы и SDK для внешних и государственных систем (ГИС ЖКХ, ГАС «Правосудие», ФССП). Работаю с MS SQL и PostgreSQL, развёртываю в Docker на Linux. В Loginom добавил в компонент Integrator асинхронный режим выполнения запросов и проброс авторизации в Loginom Server.</p>
-            </div>
-          </div>
+  <main>
+  <section class="summary" aria-labelledby="h-summary">
+    <h2 id="h-summary">О себе</h2>
+    <p>Backend-разработчик на C#/.NET, 4&nbsp;года коммерческой разработки, около 90% задач&nbsp;— серверная часть. Пишу Web&nbsp;API, асинхронную и фоновую обработку, интеграционные сервисы и SDK для внешних и государственных систем (ГИС ЖКХ, ГАС «Правосудие», ФССП). Работаю с MS&nbsp;SQL и PostgreSQL, развёртываю в Docker на Linux. В Loginom добавил в компонент Integrator асинхронный режим выполнения запросов и проброс авторизации в Loginom Server.</p>
+  </section>
 
-          <div class="section">
-            <h2>Опыт</h2>
+  <section class="skills" aria-labelledby="h-skills">
+    <h2 id="h-skills">Навыки</h2>
+    <dl>
+      <div><dt>Backend</dt><dd>C#, .NET 8, .NET Framework, ASP.NET Core, ASP.NET MVC, Web API, LINQ, async/await, многопоточность</dd></div>
+      <div><dt>Данные</dt><dd>MS SQL, PostgreSQL, Entity Framework, Redis, оптимизация запросов и индексов</dd></div>
+      <div><dt>Интеграции</dt><dd>REST, Swagger / OpenAPI, RabbitMQ, Python + Playwright</dd></div>
+      <div><dt>Архитектура</dt><dd>микросервисы, отдельные интеграционные сервисы</dd></div>
+      <div><dt>Авторизация</dt><dd>Basic, Bearer / OpenID</dd></div>
+      <div><dt>Качество</dt><dd>xUnit, Serilog, NLog</dd></div>
+      <div><dt>Инфраструктура</dt><dd>Docker, Linux, Git</dd></div>
+      <div><dt>Frontend</dt><dd>JavaScript, AngularJS, React</dd></div>
+      <div><dt>В своих проектах</dt><dd>GitHub Actions, Prometheus, Grafana, Clean Architecture</dd></div>
+    </dl>
+  </section>
 
-            <article class="item">
-              <h3>Loginom Company — Инженер-программист</h3>
-              <div class="meta"><span>авг. 2026 — настоящее время</span></div>
-              <div class="ctx">Low-code платформа анализа данных. Работаю над Loginom Integrator — компонентом, который публикует сценарии Loginom как веб-сервисы.</div>
-              <ul class="bullets">
-                <li>Добавил асинхронный режим выполнения запросов (раньше был только синхронный). Клиент получает результат опросом (polling) или через callback, фоновые задачи хранятся ограниченное время и затем удаляются.</li>
-                <li>Реализовал проброс авторизации Basic и Bearer (OpenID) из Integrator в Loginom Server и настройку её обязательности для опубликованных сервисов.</li>
-                <li>Обеспечил потокобезопасность фоновой обработки: блокировки с учётом времени выполнения, без вызова async-методов под lock.</li>
-              </ul>
-              <div class="stack"><strong>Стек:</strong> C#, .NET 8, ASP.NET Core, Git</div>
-            </article>
+  <section class="experience" aria-labelledby="h-exp">
+    <h2 id="h-exp">Опыт работы</h2>
+    <article class="job">
+      <header>
+        <h3>Loginom Company</h3>
+        <p class="dates"><time datetime="2026-08">авг. 2026</time> — н.&nbsp;в.</p>
+        <p class="title">Инженер-программист</p>
+      </header>
+      <p class="ctx">Low-code платформа анализа данных. Работаю над Loginom Integrator&nbsp;— компонентом, который публикует сценарии Loginom как веб-сервисы.</p>
+      <ul>
+        <li>Добавил асинхронный режим выполнения запросов (раньше был только синхронный). Клиент получает результат опросом (polling) или через callback, фоновые задачи хранятся ограниченное время и затем удаляются.</li>
+        <li>Реализовал проброс авторизации Basic и Bearer (OpenID) из Integrator в Loginom Server и настройку её обязательности для опубликованных сервисов.</li>
+        <li>Обеспечил потокобезопасность фоновой обработки: блокировки с учётом времени выполнения, без вызова async-методов под lock.</li>
+      </ul>
+      <p class="stack">Стек: C#, .NET 8, ASP.NET Core, Git</p>
+    </article>
 
-            <article class="item">
-              <h3>Абонент+ — Инженер-программист</h3>
-              <div class="meta"><span>сент. 2022 — авг. 2026 · fullstack, около 90% задач — backend</span></div>
-              <div class="ctx">«Претензия» — B2B-сервис для организаций ЖКХ: досудебная и судебная работа с должниками, подготовка документов для суда. 60+ организаций-клиентов, около 500 пользователей в день, около 300 000 итоговых документов.</div>
-              <ul class="bullets">
-                <li>Основной разработчик в команде из трёх человек (тимлид, разработчик, аналитик-тестировщик): серверная часть на C#, ASP.NET MVC и Web API, поддержка интерфейса на AngularJS.</li>
-                <li>Написал на C# SDK для ГИС ЖКХ, на котором работает интеграционный сервис.</li>
-                <li>Автоматизировал обмен с ГАС «Правосудие», ФССП и ФГИС УТКО: сервисы на Python и Playwright, которые выполняют действия пользователя в этих системах.</li>
-                <li>Довёл миграцию с ASP.NET MVC (.NET Framework) на ASP.NET Core (.NET 8) до работающей сборки: удалил или заменил 20–30 несовместимых зависимостей, для заранее перенесённых модулей написал unit-тесты на xUnit.</li>
-                <li>Разбирал обращения клиентов о медленных страницах: анализ планов выполнения, переписывание запросов, индексы (MS SQL, PostgreSQL).</li>
-                <li>Использовал RabbitMQ для очередей. В соседнем сервисе компании использовал Redis для кэширования.</li>
-                <li>Готовил Dockerfile для развёртывания на Linux-серверах вместе с DevOps-инженером.</li>
-              </ul>
-              <div class="stack"><strong>Стек:</strong> C#, .NET Framework, .NET 8, ASP.NET MVC, ASP.NET Core, Web API, Entity Framework, MS SQL, PostgreSQL, Redis, RabbitMQ, xUnit, Python, Playwright, AngularJS, Docker, Linux, Git</div>
-            </article>
+    <article class="job">
+      <header>
+        <h3>Абонент+</h3>
+        <p class="dates"><time datetime="2022-09">сент. 2022</time> — <time datetime="2026-08">авг. 2026</time></p>
+        <p class="title">Инженер-программист (fullstack, около 90% задач&nbsp;— backend)</p>
+      </header>
+      <p class="ctx">«Претензия»&nbsp;— B2B-сервис для организаций ЖКХ: досудебная и судебная работа с должниками, подготовка документов для суда. 60+ организаций-клиентов, около 500 пользователей в день, около 300&nbsp;000 итоговых документов.</p>
+      <ul>
+        <li>Основной разработчик в команде из трёх человек (тимлид, разработчик, аналитик-тестировщик): серверная часть на C#, ASP.NET MVC и Web API, поддержка интерфейса на AngularJS.</li>
+        <li>Написал на C# SDK для ГИС ЖКХ, на котором работает интеграционный сервис.</li>
+        <li>Автоматизировал обмен с ГАС «Правосудие», ФССП и ФГИС УТКО: сервисы на Python и Playwright, которые выполняют действия пользователя в этих системах.</li>
+        <li>Довёл миграцию с ASP.NET MVC (.NET Framework) на ASP.NET Core (.NET 8) до работающей сборки: удалил или заменил 20–30 несовместимых зависимостей, для заранее перенесённых модулей написал unit-тесты на xUnit.</li>
+        <li>Разбирал обращения клиентов о медленных страницах: анализ планов выполнения, переписывание запросов, индексы (MS SQL, PostgreSQL).</li>
+        <li>Использовал RabbitMQ для очередей. В соседнем сервисе компании использовал Redis для кэширования.</li>
+        <li>Готовил Dockerfile для развёртывания на Linux-серверах вместе с DevOps-инженером.</li>
+      </ul>
+      <p class="stack">Стек: C#, .NET Framework, .NET 8, ASP.NET MVC, ASP.NET Core, Web API, Entity Framework, MS SQL, PostgreSQL, Redis, RabbitMQ, xUnit, Python, Playwright, AngularJS, Docker, Linux, Git</p>
+    </article>
 
-            <article class="item">
-              <h3>«Школа вдохновения», фриланс — Fullstack-разработчик</h3>
-              <div class="meta"><span>сент. 2024 — май 2025</span> · <a href="https://vdokhnovenierzn.ru/" target="_blank" rel="noopener">vdokhnovenierzn.ru</a></div>
-              <ul class="bullets">
-                <li>Сделал сайт для частной школы под ключ: frontend, backend, база данных, админка, развёртывание.</li>
-              </ul>
-              <div class="stack"><strong>Стек:</strong> .NET 8, EF Core, React, PostgreSQL</div>
-            </article>
-          </div>
-        </section>
+    <article class="job">
+      <header>
+        <h3>«Школа вдохновения», фриланс</h3>
+        <p class="dates"><time datetime="2024-09">сент. 2024</time> — <time datetime="2025-05">май 2025</time></p>
+        <p class="title">Fullstack-разработчик</p>
+      </header>
+      <p class="ctx">Сайт для частной школы: <a href="https://vdokhnovenierzn.ru/">vdokhnovenierzn.ru</a></p>
+      <ul>
+        <li>Сделал сайт под ключ: frontend, backend, база данных, админка, развёртывание.</li>
+      </ul>
+      <p class="stack">Стек: .NET 8, EF Core, React, PostgreSQL</p>
+    </article>
+  </section>
 
-        <section class="right">
-          <div class="section">
-            <h2>Контакты</h2>
+  <section class="edu" aria-labelledby="h-edu">
+    <h2 id="h-edu">Образование</h2>
+    <p><strong>Рязанский государственный радиотехнический университет</strong>, бакалавр, 2024<br>09.03.02 «Информационные системы и технологии»</p>
+  </section>
 
-            <div class="contacts">
-              <a class="contact-card" href="mailto:egorgavrilin2014@yandex.ru" aria-label="Email">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" focusable="false"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="m22 6-10 7L2 6"/></svg>
-                <div class="cc-body">
-                  <div class="label">Email</div>
-                  <div class="value">egorgavrilin2014@yandex.ru</div>
-                </div>
-              </a>
+  <section class="langs" aria-labelledby="h-lang">
+    <h2 id="h-lang">Языки</h2>
+    <p>Русский — родной. Английский — A2.</p>
+  </section>
+  </main>
 
-              <a class="contact-card" href="https://t.me/gavrilin_egor" target="_blank" rel="noopener" aria-label="Telegram @gavrilin_egor">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" focusable="false"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-                <div class="cc-body">
-                  <div class="label">Telegram</div>
-                  <div class="value">@gavrilin_egor</div>
-                </div>
-              </a>
-
-              <a class="contact-card" href="https://github.com/sothug" target="_blank" rel="noopener" aria-label="GitHub sothug">
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.35-1.76-1.35-1.76-1.11-.76.08-.75.08-.75 1.22.09 1.86 1.25 1.86 1.25 1.09 1.86 2.86 1.32 3.56 1.01.11-.8.43-1.32.78-1.63-2.67-.3-5.47-1.34-5.47-5.98 0-1.32.47-2.4 1.24-3.24-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.24 2.87.12 3.17.77.84 1.24 1.92 1.24 3.24 0 4.65-2.8 5.68-5.48 5.98.44.38.83 1.12.83 2.26v3.35c0 .32.22.7.83.58A12 12 0 0 0 12 .5z"/></svg>
-                <div class="cc-body">
-                  <div class="label">GitHub</div>
-                  <div class="value">github.com/sothug</div>
-                </div>
-              </a>
-
-              <a class="contact-card" href="https://yandex.ru/maps/?text=Рязань" target="_blank" rel="noopener" aria-label="Город Рязань">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" focusable="false"><path d="M12 21s-7-4.35-7-10a7 7 0 1 1 14 0c0 5.65-7 10-7 10Z"/><circle cx="12" cy="11" r="3"/></svg>
-                <div class="cc-body">
-                  <div class="label">Город</div>
-                  <div class="value">Рязань</div>
-                </div>
-              </a>
-            </div>
-
-            <div class="print-contacts">
-              <div><strong>Город:</strong> <span>Рязань</span></div>
-              <div><strong>Email:</strong> egorgavrilin2014@yandex.ru</div>
-              <div><strong>Telegram:</strong> https://t.me/gavrilin_egor</div>
-              <div><strong>GitHub:</strong> https://github.com/sothug</div>
-            </div>
-          </div>
-
-          <div class="section">
-            <h2>Навыки</h2>
-            <div class="item">
-              <dl class="skills">
-                <div class="skill-group"><dt>Backend</dt><dd><span>C#, .NET 8, .NET Framework, ASP.NET Core, ASP.NET MVC, Web API, LINQ, async/await, многопоточность</span></dd></div>
-                <div class="skill-group"><dt>Данные</dt><dd><span>MS SQL, PostgreSQL, Entity Framework, Redis, оптимизация запросов и индексов</span></dd></div>
-                <div class="skill-group"><dt>Интеграции</dt><dd>REST, Swagger / OpenAPI, RabbitMQ, Python + Playwright</dd></div>
-                <div class="skill-group"><dt>Архитектура</dt><dd><span>микросервисы, отдельные интеграционные сервисы</span></dd></div>
-                <div class="skill-group"><dt>Авторизация</dt><dd>Basic, Bearer / OpenID</dd></div>
-                <div class="skill-group"><dt>Качество</dt><dd>xUnit, Serilog, NLog</dd></div>
-                <div class="skill-group"><dt>Инфраструктура</dt><dd>Docker, Linux, Git</dd></div>
-                <div class="skill-group"><dt>Frontend</dt><dd>JavaScript, AngularJS, React</dd></div>
-                <div class="skill-group"><dt>В своих проектах</dt><dd>GitHub Actions, Prometheus, Grafana, Clean Architecture</dd></div>
-              </dl>
-            </div>
-          </div>
-
-          <div class="section">
-            <h2>Образование</h2>
-            <div class="item">
-              <h3>Рязанский государственный радиотехнический университет</h3>
-              <div class="meta"><span>Бакалавр · 2024</span></div>
-              <div class="ctx">09.03.02 — Информационные системы и технологии</div>
-            </div>
-          </div>
-
-          <div class="section">
-            <h2>Языки</h2>
-            <div class="item">
-              <p class="lead">Русский — родной · Английский — A2</p>
-            </div>
-          </div>
-        </section>
-      </div>
-    </main>
-
-    <footer class="footer">
-      <p>Обновлено: октябрь 2026 · Предпочтительно — почта</p>
-    </footer>
-  </div>
-
+  <footer class="foot"><p>Обновлено в октябре 2026. Удобнее всего связаться по почте.</p></footer>
+</div>
 </body>
 </html>
